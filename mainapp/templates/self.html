@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Developer Page
+{% endblock %}
+
+{% block main %}
+
+<div class="row bgc">
+    <div class="col-sm-11 mx-auto">
+        <div class="row mt-5 mb-5">
+            <div class="col-sm-6 shadow-lg bg-light text-dark rounded-2">
+                <h2 id="h1">&#9830;Akash Chauhan&#9830;</h2>
+                <h5>Full Stack Web Developer</h5>
+                <p >"I'm a Full Stack Developer skilled in building dynamic, end-to-end web solutions. I work across the entire tech stack — from designing responsive front-end interfaces using HTML, CSS, JavaScript (and frameworks like Django), to building robust back-end systems with  Python/Django, and managing databases like db.qlite3. I enjoy solving real-world problems with clean, maintainable code and thrive in collaborative environments where innovation and learning never stop."</p>
+            </div>
+            <div class="col-sm-6">
+                <div class="mx-auto mt-2 text-center ms-5">
+                                    <img src="{% static 'img/ak.jpg' %}" alt="" class="rounded-circle " height="250px">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'cbase.html' %}
+
+
+
+{% block title %}
+
+Contractor Dashboard
+
+
+{% endblock %}
+
+
+
+{% block main %}
+
+
+
+
+
+
+<!-- Main Content -->
+
+<div class="row mt-4">
+        <div class="col-sm-12  mb-3">
+                <h5 id="greeting"></h5>
+        </div>
+</div>
+
+<!-- Summary Card -->
+<div class="row text-center mt-4">
+        <div class="col-md-3 mb-3">
+                <div class="card shadow-sm p-3">
+                        <i class="bi bi-bar-chart-fill text-primary fs-1 mb-1"></i>
+                        <h2>{{tp}}</h2>
+                        <p>Total Projects</p>
+                </div>
+        </div>
+        <div class="col-md-3 mb-3">
+                <div class="card shadow-sm p-3">
+                        <i class="bi bi-hourglass-split text-warning fs-1 mb-1"></i>
+                        <h2>{{op}}</h2>
+                        <p>Ongoing Projects</p>
+                </div>
+        </div>
+        <div class="col-md-3 mb-3">
+                <div class="card shadow-sm p-3">
+                        <i class="bi bi-exclamation-circle fs-1 text-danger mb-1"></i>
+                        <h2>{{pp}}</h2>
+                        <p>Pending Projects</p>
+                </div>
+        </div>
+        <div class="col-md-3 mb-3">
+                <div class="card shadow-sm p-3">
+                        <i class="bi bi-check2-circle text-success fs-1 mb-1"></i>
+                        <h2>{{cp}}</h2>
+                        <p>Complete Projects</p>
+                </div>
+        </div>
+</div>
+
+<!-- Ongoing Projects -->
+<div class="row mt-4">
+        <div class="col">
+                <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                                Ongoing Projects
+                        </div>
+                        <div class="card-body p-0">
+                                <table class="table table-hover mb-0">
+                                        <thead class="table-light">
+                                                <tr>
+                                                        <th>Project</th>
+                                                        <th>Location</th>
+                                                        <th>Status</th>
+                                                        <th>start date</th>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                                {% for p in co%}
+                                                <tr>
+                                                        <td>{{p.projectname}}</td>
+                                                        <td>{{p.location}}</td>
+                                                        <td><span class="badge bg-warning text-dark">{{p.status}}</span>
+                                                        </td>
+                                                        <td>{{p.start_date}}</td>
+                                                </tr>
+                                                {% endfor %}
+
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
+        </div>
+</div>
+
+<!-- Upcoming Appointments -->
+<div class="row mt-4 mb-5">
+        <div class="col">
+                <div class="card shadow-sm">
+                        <div class="card-header bg-success text-white">
+                                Upcoming Appointments
+                        </div>
+                        <div class="card-body">
+                                <ul class="list-group">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Client: Mr. Sharma (Site Visit)
+                                                <span class="badge bg-primary">2 Aug, 10:00 AM</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Material Supplier Meeting
+                                                <span class="badge bg-primary">3 Aug, 3:00 PM</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Site Inspection - Villa
+                                                <span class="badge bg-primary">5 Aug, 12:00 PM</span>
+                                        </li>
+                                </ul>
+                        </div>
+                </div>
+        </div>
+
+
+        <!-- Confetti JS -->
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+        <!-- Greeting + Confetti Script -->
+        <script>
+                const greeting = document.getElementById("greeting");
+                const hour = new Date().getHours();
+                if (hour < 12) {
+                        greeting.textContent = "Good Morning 🌤️, {{name}}!";
+                } else if (hour < 17) {
+                        greeting.textContent = "Good Afternoon ☀️, {{name}}!";
+                } else {
+                        greeting.textContent = "Good Evening 🌙, {{name}}!";
+                }
+
+                setTimeout(() => {
+                        confetti({
+                                particleCount: 200,
+                                spread: 100,
+                                origin: { y: 0.6 }
+                        });
+                }, 400);
+        </script>
+
+
+        {% endblock %}

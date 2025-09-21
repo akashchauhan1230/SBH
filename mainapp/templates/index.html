@@ -1,0 +1,432 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+
+{% block main %}
+
+<div class="row bgi">
+    <div class="col-sm-7  content mx-auto">
+        <!-- Hero Section -->
+        <div class="text-center mb-5 mt-5" data-aos="fade-up" data-aos-duration="1500">
+            <p class="text-uppercase text-warning">--Building Tomorrow Today--</p>
+            <h1>&#9830; Welcome to SmartBuildHub &#9830;</h1>
+            <p class="text-light">Your partner in innovative construction solutions.</p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+                <button class=" ar" data-aos="fade-right" data-aos-duration="1600">
+                    &#9830; Get Started
+                </button>
+                <button class=" ar" data-aos="fade-left" data-aos-duration="1600">
+                    Our Projects &#9830;
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Stats -->
+    <div class = " mb-5" >
+        <div class="row">
+        <div class="col-sm-7 text-center rounded-3 mx-auto p-4 "data-aos="fade-up" data-aos-duration="1500">
+
+            <div class="row rounded-3 py-3 ax"  style="background-color: rgba(0, 0, 0,0.8);" >
+                <div class="col-sm">
+                    <h2><span id="ye">30</span>+</h2>
+                    <p class="text-light">Years of Experience</p>
+                </div>
+                <div class="col-sm">
+                    <h2><span id="pr">250</span>+</h2>
+                    <p class="text-light">Projects Completed</p>
+                </div>
+                <div class="col-sm">
+                    <h2><span id="cs">98</span>%</h2>
+                    <p class="text-light">Customer Satisfaction</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- About Section -->
+<div class="row align-items-center mb-5 mt-5">
+    <div class="col-sm-11 mx-auto">
+        <div class="row">
+            <div class="col-sm  mx-auto">
+                <img src="{% static 'img/worker.jpg' %}" class="img-fluid rounded ax" alt="Our Team" data-aos="flip-left"
+                    data-aos-duration="1500" />
+            </div>
+            <div class="col-sm " data-aos="fade-up" data-aos-duration="1500">
+                <h3>About Our Company</h3>
+                <h2>Building Dreams With Excellence &amp; Reliability</h2>
+                <p>
+                    With decades of industry experience, our team of builders and architects brings your vision to life
+                    with
+                    meticulous attention to detail and unwavering quality.
+                </p>
+                <ul>
+                    <li>Professional team of experienced builders and designers</li>
+                    <li>High-quality materials from trusted suppliers</li>
+                    <li>On-time project completion & transparent communication</li>
+                </ul>
+                <button class="ar">Learn more about us &rarr;</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Platform Features -->
+
+<div class="row bgc py-4">
+    <div class="col-sm-11 mx-auto">
+
+        <div class=" text-center text-light co" data-aos="fade-up" data-aos-duration="1500">
+            <p class="text-warning">&#9830;PLATFORM FEATURES&#9830;</p>
+            <h1 class="fs-2">Powerful Tools for Modern Construction</h1>
+            <p>Our comprehensive suite of features empowers every stakeholder in the construction process with the tools
+                they need to succeed.</p>
+        </div>
+        <div class="row mt-5 ">
+            <div class="col-sm " data-aos="fade-up" data-aos-duration="1500">
+                <div class="shadow-lg mt-3 bg-light  text-dark rounded-4 p-3">
+                    <div class="fa-solid fa-dashboard fa-3x mb-1 "></div>
+                    <h4>Project Dashboard</h4>
+                    <p>Centralized hub for tracking progress, milestones, and resource allocation with intuitive
+                        visualizations.</p>
+                    <ul>
+                        <li>Real-time status tracking</li>
+                        <li>Task management system</li>
+                        <li>Budget monitoring</li>
+                    </ul>
+                    <a href="#" class="text-decoration-none text-dark ">Leran More &rarr;</a>
+                </div>
+            </div>
+            <div class="col-sm  mt-3">
+                <img src="{% static 'img/dash2.jpg' %}" alt="" height="306px" class="w-100 shadow-lg rounded-4 "
+                    data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-sm mt-3 ">
+                <img src="{% static 'img/team.jpg' %}" alt="" height="306px" class="w-100 shadow-lg rounded-4"
+                    data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+            </div>
+            <div class="col-sm" data-aos="fade-up" data-aos-duration="1500">
+                <div class="shadow-lg mt-3 bg-light  text-dark rounded-4 p-3">
+                    <div class="fa-solid fa-handshake fa-3x mb-1 "></div>
+                    <h4>Team Collaborationn</h4>
+                    <p>Connect all stakeholders in one platform with powerful communication and file-sharing
+                        capabilities.
+                    </p>
+                    <ul>
+                        <li>Unified messaging system</li>
+                        <li>Document sharing & approvals</li>
+                        <li>Role-based permissions</li>
+                    </ul>
+                    <a href="#" class="text-decoration-none text-dark">Leran More &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2  mb-5">
+            <div class="col-sm " data-aos="fade-up" data-aos-duration="1500">
+                <div class="shadow-lg bg-light mt-3  text-dark rounded-4 p-3 ">
+                    <div class="fa-solid fa-cubes fa-3x mb-1"></div>
+                    <h4>3D Visualization</h4>
+                    <p>Experience your construction project in three dimensions before breaking ground.</p>
+                    <ul>
+                        <li>Interactive models</li>
+                        <li>Virtual walkthroughs</li>
+                        <li>Design revisions in real-time</li>
+                    </ul>
+                    <a href="#" class="text-decoration-none text-dark ">Leran More &rarr;</a>
+                </div>
+            </div>
+            <div class="col-sm mt-3 ">
+                <img src="{% static 'img/3d.jpg' %}" alt="" height="306px" class="w-100  shadow-lg rounded-4 "
+                    data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Services -->
+
+<div class="row my-5">
+    <div class="col-lg-11 mx-auto text-center" data-aos="fade-up" data-aos-duration="1500">
+        <p class="text-warning">&#9830;OUR SERVICES &#9830;</p>
+        <h2 class="fs-2">Comprehensive Construction Solutions</h2>
+        <p>We offer a wide range of construction services tailored to meet the unique needs of each project, delivered
+            with exceptional craftsmanship and attention to detail.</p>
+    </div>
+
+    <!-- Service Cards -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center mx-auto bg-light px-3 py-4">
+        <!-- Service Item -->
+        <div class="col" data-aos="flip-left" data-aos-duration="1500">
+            <div class="card shadow-sm h-100  ax">
+                <div class="card-body">
+                    <i class="fa-solid fa-house fa-3x mb-3 "></i>
+                    <h4>Residential Construction</h4>
+                    <p>From custom homes to multi-family units, we build energy-efficient residential spaces for modern
+                        living.</p>
+                    <ul class="text-start">
+                        <li>Custom Home Building</li>
+                        <li>Energy-Efficient Design</li>
+                        <li>Multi-Family Housing</li>
+                    </ul>
+                    <a href="#" class="text-decoration-none text-dark ">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col" data-aos="flip-left" data-aos-duration="1500">
+            <div class="card shadow-sm h-100  ax">
+                <div class="card-body">
+                    <i class="fa-solid fa-building-columns fa-3x mb-3 "></i>
+                    <h4>Commercial Building</h4>
+                    <p>Office spaces, retail centers, and industrial facilities built to the highest standards of
+                        quality and functionality.</p>
+                    <ul class="text-start">
+                        <li>Office Complexes</li>
+                        <li>Retail & Hospitality</li>
+                        <li>Industrial Facilities</li>
+                    </ul>
+                    <a href="#" class="text-decoration-none text-dark">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col" data-aos="flip-left" data-aos-duration="1500">
+            <div class="card shadow-sm h-100  ax">
+                <div class="card-body">
+                    <i class="fa-solid fa-palette fa-3x mb-3 "></i>
+                    <h4>Interior Design</h4>
+                    <p>Transform your space with expert interior design services that inspire and delight.</p>
+                    <ul class="text-start">
+                        <li>Space Planning</li>
+                        <li>Custom Furnishings</li>
+                        <li>Material Selection</li>
+                    </ul>
+                    <a href="#" class="text-decoration-none  text-dark">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col" data-aos="flip-left" data-aos-duration="1500">
+            <div class="card shadow-sm h-100  ax">
+                <div class="card-body">
+                    <i class="fa-solid fa-hammer fa-3x mb-3 "></i>
+                    <h4>Renovation & Remodeling</h4>
+                    <p>We renovate and remodel spaces to suit evolving needs with quality and style.</p>
+                    <ul class="text-start">
+                        <li>Kitchen & Bath Remodeling</li>
+                        <li>Room Additions</li>
+                        <li>Basement Renovations</li>
+                    </ul>
+                    <a href="#" class="text-decoration-none text-dark">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col" data-aos="flip-left" data-aos-duration="1500">
+            <div class="card shadow-sm h-100  ax">
+                <div class="card-body">
+                    <i class="fa-solid fa-compass-drafting fa-3x mb-3 "></i>
+                    <h4>Architectural Design</h4>
+                    <p>Functional and aesthetic architectural solutions tailored to your project needs.</p>
+                    <ul class="text-start">
+                        <li>Blueprint Drafting</li>
+                        <li>3D Visualizations</li>
+                        <li>Zoning & Permit Support</li>
+                    </ul>
+                    <a href="#" class="text-decoration-none text-dark">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col" data-aos="flip-left" data-aos-duration="1500">
+            <div class="card shadow-sm h-100  ax">
+                <div class="card-body">
+                    <i class="fa-solid fa-clipboard fa-3x mb-3 "></i>
+                    <h4>Construction Management</h4>
+                    <p>End-to-end construction oversight ensuring quality, safety, and timeliness.</p>
+                    <ul class="text-start">
+                        <li>Project Scheduling</li>
+                        <li>Site Supervision</li>
+                        <li>Budget Monitoring</li>
+                    </ul>
+                    <a href="#" class="text-decoration-none text-dark">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row bgc" >
+    <div class="col-sm-7  mx-auto">
+
+        <div class="text-center mb-5 mt-5" data-aos="fade-up" data-aos-duration="1500">
+            <p class="text-uppercase text-warning">&#9830; Our Project&#9830;</p>
+            <h1>Featured Construction Projects </h1>
+            <p class="text-light">Take a look at some of our most impressive projects, showcasing our commitment to
+                quality, innovation, and excellence in construction.</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="row  py-5 bgc">
+    <div class="col-sm-11 mx-auto">
+        <div class="row">
+            <div class="col-sm-4  position-relative mt-3 text-light" data-aos="flip-left" data-aos-duration="1500"
+                data-aos-easing="ease-out-cubic">
+                <img src="{% static 'img/Modern-Office-Complex.jpg' %}" alt="" class="w-100 rounded-3  ax" height="270px">
+                <div class="position-absolute" style="bottom: 30px; left: 30px; line-height: 15px;">
+                    <p>Commercial</p>
+                    <h5>Modern Office Complex</h5>
+                    <p>A contemporary office space designed for maximum productivity and employee wellbeing</p>
+                    <a href="#" class="text-decoration-none text-light fw-semibold">View Project &rarr;</a>
+                </div>
+            </div>
+            <div class="col-sm-4  position-relative mt-3 text-light" data-aos="flip-left" data-aos-duration="1500"
+                data-aos-easing="ease-out-cubic">
+                <img src="{% static 'img/Luxury-Residential-Tower.jpg' %}" alt="" class="w-100 rounded-3  ax"
+                    height="270px">
+                <div class="position-absolute" style="bottom: 30px; left: 30px; line-height: 15px;">
+                    <p>Residential</p>
+                    <h5>Luxury Residential Tower</h5>
+                    <p>Premium living spaces with state-of-the-art amenities and stunning city views.</p>
+                    <a href="#" class="text-decoration-none text-light fw-semibold">View Project &rarr;</a>
+                </div>
+            </div>
+            <div class="col-sm-4  position-relative mt-3 text-light" data-aos="flip-left" data-aos-duration="1500"
+                data-aos-easing="ease-out-cubic">
+                <img src="{% static 'img/sus.jpg' %}" alt="" class="w-100 rounded-3  ax" height="270px">
+                <div class="position-absolute" style="bottom: 30px; left: 30px; line-height: 15px;">
+                    <p>Public</p>
+                    <h5>Sustainable Community Center</h5>
+                    <p>Eco-friendly architecture designed to bring communities together.</p>
+                    <a href="#" class="text-decoration-none text-light fw-semibold">View Project &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-sm-4 mt-3 position-relative text-light" data-aos="flip-right" data-aos-duration="1500"
+                data-aos-easing="ease-out-cubic">
+                <img src="{% static 'img/Industrial-Manufacturing-Hub.jpg' %}" alt="" class="w-100 rounded-3  ax"
+                    height="270px">
+                <div class="position-absolute" style="bottom: 30px; left: 30px; line-height: 15px;">
+                    <p>Industrial</p>
+                    <h5>Industrial Manufacturing Hub</h5>
+                    <p>Cutting-edge industrial facilities designed for optimal workflow and efficiency.</p>
+                    <a href="#" class="text-decoration-none text-light fw-semibold">View Project &rarr;</a>
+                </div>
+            </div>
+            <div class="col-sm-4 mt-3 position-relative text-light" data-aos="flip-right" data-aos-duration="1500"
+                data-aos-easing="ease-out-cubic">
+                <img src="{% static 'img/Waterfront-Hotel-Spa.jpg' %}" alt="" class="w-100 rounded-3  ax" height="270px">
+                <div class="position-absolute" style="bottom: 30px; left: 30px; line-height: 15px;">
+                    <p>Hospitality</p>
+                    <h5>Waterfront Hotel & Spa</h5>
+                    <p>Luxury hospitality project featuring elegant <br> design and premium guest experiences.</p>
+                    <a href="#" class="text-decoration-none text-light fw-semibold">View Project &rarr;</a>
+                </div>
+            </div>
+            <div class="col-sm-4 mt-3 position-relative text-light" data-aos="flip-right" data-aos-duration="1500"
+                data-aos-easing="ease-out-cubic">
+                <img src="{% static 'img/Urban-Mixed-Use-Development.jpg' %}" alt="" class="w-100 rounded-3  ax"
+                    height="270px">
+                <div class="position-absolute" style="bottom: 30px; left: 30px; line-height: 15px;">
+                    <p>Mixed Use</p>
+                    <h5>Urban Mixed-Use Development</h5>
+                    <p>Integrated commercial and residential spaces designed for modern urban living.</p>
+                    <a href="#" class="text-decoration-none text-light fw-semibold">View Project &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-5"><button class="ar" data-aos="zoom-in" data-aos-duration="1600">&#9830;View All
+            Projects&#9830;</button></div>
+</div>
+
+<div class="row bgc py-5">
+    <div class="col-sm-11 mx-auto">
+
+        <!-- How It Works -->
+        <div class="text-center my-5">
+            <p class="text-warning">&#9830; OUR PROCESS &#9830;</p>
+            <h2>How SmartBuild Hub Works</h2>
+            <p>
+                Streamlined workflow from concept to completion, connecting all stakeholders through an intuitive
+                platform.
+            </p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4 g-4 text-center">
+            <div class="col" data-aos="fade-up" data-aos-duration="1500">
+                <div class="p-4  text-dark  bg-light rounded shadow-lg  ax">
+                    <i class="fa-solid fa-book-open fa-3x mb-3"></i>
+                    <h5>Project Planning</h5>
+                    <p>We Define vision, strategy, budget and timeline collaboratively.</p>
+                </div>
+            </div>
+            <div class="col  " data-aos="fade-down" data-aos-duration="1500">
+                <div class="p-4  text-dark rounded shadow-lg bg-light  ax">
+                    <i class="fa-solid fa-diagram-project fa-3x mb-3"></i>
+                    <h5>Team Assembly</h5>
+                    <p>Connect with verified architects, suppliers and contractors.</p>
+                </div>
+            </div>
+            <div class="col " data-aos="fade-down" data-aos-duration="1500">
+                <div class="p-4  text-dark  rounded shadow-lg bg-light  ax">
+                    <i class="fa-solid fa-shield-halved fa-3x mb-3"></i>
+                    <h5>Project Execution</h5>
+                    <p>Monitor progress, approve changes and ensure clear communication.</p>
+                </div>
+            </div>
+            <div class="col" data-aos="fade-up" data-aos-duration="1500">
+                <div class="p-4  text-dark  rounded shadow-lg bg-light  ax">
+                    <i class="fa-solid fa-square-check fa-3x mb-3"></i>
+                    <h5>Project Completion</h5>
+                    <p>Receive documentation, warranty info and maintenance guides.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Call to Action -->
+<div class="row align-items-center py-5 bg-dark text-light p-5 ">
+    <div class="col-12 col-md-7 text-center text-md-start mb-4 mb-md-0">
+        <h2>Ready to Build Your Dream Project?</h2>
+        <p>Let’s discuss how our construction and design expertise can bring your vision to life.</p>
+        <div class="d-flex flex-column flex-sm-row gap-3">
+            <button class="ar">&#9830;Get Free Estimate</button>
+            <button class="ar">Contact Us&#9830;</button>
+        </div>
+    </div>
+    <div class="col-12 col-md-5">
+        <div class="row gx-3 gy-3">
+            <div class="col-6 text-center shadow p-3 rounded  ax">
+                <h4>150+</h4>
+                <p>Projects Completed</p>
+            </div>
+            <div class="col-6 text-center shadow p-3 rounded  ax">
+                <h4>120+</h4>
+                <p>Expert Team Members</p>
+            </div>
+            <div class="col-6 text-center shadow p-3 rounded  ax">
+                <h4>25+</h4>
+                <p>Years Experience</p>
+            </div>
+            <div class="col-6 text-center shadow p-3 rounded  ax">
+                <h4>98%</h4>
+                <p>On-Time Completion</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

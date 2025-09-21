@@ -1,0 +1,192 @@
+{% extends 'adminbase.html'%}
+
+
+
+
+
+
+
+
+
+
+
+{% block admin %}
+
+<!-- Greeting -->
+<div class="row">
+    <div class="col text-center mb-2 mt-3">
+        <h4 id="greeting" class="fw-semibold text-primary"></h4>
+    </div>
+</div>
+
+<!-- Cards Row 1 -->
+<!-- Project Stats -->
+        <div class="card shadow-sm border-0 my-4">
+            <div class="card-header bg-primary text-white">
+                Project Overview
+            </div>
+            <div class="card-body ">
+                <div class="row text-center text-light g-4">
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="card py-3 shadow-lg border-0">
+                            <i class="bi bi-bar-chart-fill text-primary fs-1 mb-1"></i>
+                            <h2>{{pr}}</h2>
+                            <h6>Total Projects</h6>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="card py-3 shadow-lg border-0">
+                            <i class="bi bi-check2-circle text-success fs-1 mb-1"></i>
+                            <h2>{{pc}}</h2>
+                            <h6>Projects Completed</h6>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="card py-3 shadow-lg border-0">
+                            <i class="bi bi-hourglass-split text-warning fs-1 mb-1"></i>
+                            <h2>{{po}}</h2>
+                            <h6>Project Ongoing</h6>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="card py-3 shadow-lg border-0">
+                            <i class="bi bi-chat-heart-fill text-success fs-1 mb-1"></i>
+                            <h2>{{pp}}</h2>
+                            <h6>Total Enquiry</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Section -->
+        <div class="card shadow-sm border-0 my-4">
+            <div class="card-header bg-success text-white">
+                User Section
+            </div>
+            <div class="card-body bg-light">
+                <div class="row g-3">
+                    <!-- User Stats -->
+                    <div class="col-lg-6">
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="card text-center p-2 shadow-sm border-0">
+                                    <i class="bi bi-people-fill fs-1 text-primary "></i>
+                                    <h2 class="fw-bold">{{tu}}</h2>
+                                    <h6 class="text-muted">Total Users</h6>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card text-center p-2 shadow-sm border-0">
+                                    <i class="bi bi-house-door-fill fs-1 text-success "></i>
+                                    <h2 class="fw-bold">{{th}}</h2>
+                                    <h6 class="text-muted">Homeowners</h6>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card text-center p-2 shadow-sm border-0">
+                                    <i class="bi bi-person-badge-fill fs-1 text-warning "></i>
+                                    <h2 class="fw-bold">{{tc}}</h2>
+                                    <h6 class="text-muted">Contractors</h6>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card text-center p-2 shadow-sm border-0">
+                                    <i class="bi bi-person-x-fill fs-1 text-danger "></i>
+                                    <h2 class="fw-bold">6</h2>
+                                    <h6 class="text-muted">Blocked Users</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm " style="height: 315px;">
+                            <div class="card-header bg-warning text-white">
+                                <i class="bi bi-clock-history me-2"></i>Recent Activity
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item border-0 d-flex justify-content-between align-items-center">
+                                        <div><i class="bi bi-plus-circle-fill text-primary me-2 fs-5"></i>New project added</div>
+                                        <span class="badge bg-primary">2 Aug, 10:00 AM</span>
+                                    </li>
+                                    <li class="list-group-item border-0 d-flex justify-content-between align-items-center">
+                                        <div><i class="bi bi-check-circle-fill text-success me-2 fs-5"></i>Marked X projects Completed</div>
+                                        <span class="badge bg-success">3 Aug, 3:00 PM</span>
+                                    </li>
+                                    <li class="list-group-item border-0 d-flex justify-content-between align-items-center">
+                                        <div><i class="bi bi-house-check-fill text-info me-2 fs-5"></i>Delhi Villa Project Completed</div>
+                                        <span class="badge bg-info">5 Aug, 12:00 PM</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ongoing Projects -->
+        <div class="card border-0 shadow-sm my-4">
+            <div class="card-header bg-primary text-white">
+                Ongoing Projects
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Project</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>start date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for p in op%}
+                        <tr>
+                            <td>{{p.projectname}}</td>
+                            <td>{{p.location}}</td>
+                            <td><span class="badge bg-warning text-dark">{{p.status}}</span></td>
+                            <td>{{p.start_date}}</td>
+                        </tr>
+                    {% endfor %}
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        
+       
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+    // Greet admin based on time
+    const greeting = document.getElementById("greeting");
+    const hour = new Date().getHours();
+    if (hour < 12) {
+        greeting.textContent = "Good Morning  🌤️, Admin!";
+    } else if (hour < 17) {
+        greeting.textContent = "Good Afternoon ☀️, Admin!";
+    } else {
+        greeting.textContent = "Good Evening 🌙, Admin!";
+    }
+
+    // Trigger confetti when page loads
+    setTimeout(() => {
+        confetti({
+            particleCount: 200,
+            spread: 100,
+            origin: { x: 0.6 }
+        });
+    }, 400);
+
+
+
+
+</script>
+
+{% endblock %}

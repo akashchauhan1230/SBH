@@ -1,0 +1,45 @@
+{% extends 'cbase.html' %}
+
+
+
+{% block title %}
+
+View Projects
+
+
+{% endblock %}
+
+
+{% block main %}
+
+
+<div class="row ">
+    
+    <div class="col-sm-10 mx-auto shadow p-4 rounded-3 bg-light">
+<h3 class="text-center">Project Application</h3>
+        
+        <form method="post"  enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="proposal" class="form-label"> Proposal Text</label>
+                <textarea name="proposal_text" id="proposal" class="form-control" required></textarea>
+            </div>
+        <div class="mb-3">
+            <label for="file" class="form-label">Upload Design File</label>
+            <input type="file" name="design_file" id="file" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="budget" class="form-label">Estimated Budget</label>
+            <input type="number" name="estimated_budget" id="budget" class="form-control" step="0.01" required>
+        </div>
+        <div class="mb-3">
+            <label for="duration" class="form-label">Estimated Duration</label>
+            <input type="number" name="estimated_duration" id="duration" class="form-control" required>
+        </div>
+        <div class="mb-3 text-center">
+        <button class="btn w-50" type="submit" style="background-color: orangered;">Submit</button>
+        </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

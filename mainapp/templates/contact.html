@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+Contact Page
+{% endblock %}
+
+{% block main %}
+
+<div class="row bgc">
+     <!--Alert box -->
+        {% if messages %}
+        {% for m in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ m }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        {% endfor %}
+        {% endif %}
+    <div class="col-sm-7 mx-auto content">
+       
+        
+        <div class="text-center content mt-5" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+            data-aos-duration="1900">
+            <h1 id="h1">&#9830;Let's Connect With SmartBuildHub&#9830;</h1>
+            <p class="sm">Your question is important to us. Please submit your queries..</p>
+        </div>
+    </div>
+
+
+</div>
+<div class="row  bgc">
+    <div class="col-sm-11 mx-auto">
+        <div class="row mt-5 mb-5">
+
+
+            <div class="col-sm-6 mt-3 mx-auto" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                data-aos-duration="1500">
+                <img src="{% static 'img/hand.jpg'%}" alt="" class="w-100 rounded-4 ax" height="550px" style="opacity: 0.9;">
+            </div>
+            <div class="col-sm-6 border py-2 mt-3  mx-auto shadow-lg text-light rounded-4 " data-aos="fade-up"
+                data-aos-duration="1500">
+
+
+
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="n" class="form-label">Name</label>
+                        <input type="text" id="name" class="form-control" name="name" id="exampleFormControlInput1"
+                            required  placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="con" class="form-label">Contact Number</label>
+                        <input type="number" id="con" class="form-control" name="contactno" required placeholder="Enter your number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="em" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control" name="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="s" class="form-label">Subject</label>
+                        <input type="text" id="sub" class="form-control" name="subject" required  placeholder="Subject">
+                    </div>
+                    <div class="mb-3">
+                        <label for="m" class="form-label">Message</label>
+                        <textarea type="text" id="mess" class="form-control" rows="3" name="message"
+                            required style="background-color: white;" ></textarea>
+                    </div>
+                    <div class="mb-3">
+
+                        <button type="submit" class="w-100 ar">Submit Enquiry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

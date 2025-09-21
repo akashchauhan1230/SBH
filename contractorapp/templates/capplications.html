@@ -1,0 +1,51 @@
+{% extends 'cbase.html' %}
+
+{% block main %}
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Contractors Application</h3>
+    </div>
+    <table class="table table-dark table-hover">
+        <tr>
+            <th>S.NO</th>
+            <th>Project Name</th>
+            <th>Homeowner Name</th>
+            <th>Design</th>
+            <th>Estimated Budget</th>
+            <th>Estimated Duration</th>
+            <th>Status</th>
+            <th>Submitted At</th>
+        </tr>
+        {% for a in applications %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{a.project.projectname}}</td>
+            <td>{{a.project.homeowner.name}}</td>
+            <td>
+                {% if a.design_file %}
+                <a href="{{a.design_file.url}}" target="_blank" class="btn btn-primary">View Design</a>
+                {% else %}
+                No Design Files
+                {% endif %}
+            </td>
+            <td>{{a.estimated_budget}}</td>
+            <td>{{a.estimated_duration}}</td>
+            <td>
+                {% if a.status == 'pending' %}
+                <span class="btn btn-warning">pending</span>
+                {% elif a.status == 'approved' %}
+                <span class="btn btn-success">approved</span>
+                {% elif a.status == 'rejected' %}
+                <span class="btn btn-danger">Rejected</span>
+                {% else %}
+                {{a.status}}
+                {% endif %}
+
+            </td>
+            <td>{{a.submitted_at}}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

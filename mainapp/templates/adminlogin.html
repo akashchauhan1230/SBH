@@ -1,0 +1,81 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="shortcut icon" href="{%static 'img/s (1).png'%}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/styless.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/splide.min.css' %}">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row bgc " style="height: 100vh;">
+            <div class="col-sm-4 mx-auto my-auto">
+                <!--Alert box-->
+                    {% if messages %}
+                    {% for m in messages %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ m }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                    {% endfor %}
+                    {% endif %}
+                    <!--Alert box end-->
+                <div class="card  p-4">
+                    <div class="text-center">
+                        <img src="{% static 'img/dark.png' %}" alt="" height="100px">
+                        <h4 style="color:#1d263a ;">Welcome Admin</h4>
+                    </div>
+                    <form method="post" class="mt-4">
+                        {% csrf_token %}
+                        <div class=" mb-3">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control" id="username"
+                                placeholder="name@example.com">
+                        </div>
+                        <div >
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="form-control" id="password"
+                                placeholder="Password">
+
+                        </div>
+                        <button type="submit" class="w-100 mt-4 ar ">Login</button>
+                        <p class="mt-5 fw-semibold">&copy;SmartBuildHub <a href="{% url 'index' %}" class="float-end un"
+                                style="color:rgb(241, 98, 9) ;">&#9830;Back To Home&#9830;</a></p>
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+{% extends 'homebase.html' %}
+
+
+
+
+{% block title %}
+
+Running Project
+
+
+{% endblock %}
+
+
+
+{% block main %}
+<div class="row">
+    <div class="col-sm-12">
+
+
+        <h3>Running Project</h3>
+{% if projects %}
+
+<table class="table table-dark table-hover">
+<tr>
+    <th>S.No</th>
+    <th>Project Name</th>
+    <th>Project Status</th>
+    <th>Progress</th>
+    <th>Contractor Name</th>
+    <th>Contractor Contact</th>
+    <th>Action</th>
+</tr>
+{% for p in projects %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{p.projectname}}</td>
+        <td>{{p.status}}</td>
+        <td>{{p.progress}}</td>
+        <td>{{p.contractor.name}}</td>
+        <td>{{p.contractor.contactno}}</td>
+        <td><a href="{% url 'viewupdates' id=p.id %}" class=" btn bg-success text-light fw-semibold">View Updates</a></td>
+    </tr>
+{% endfor %}
+
+</table>
+
+{% else %}
+
+<p>You have no running projects.</p>
+{% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

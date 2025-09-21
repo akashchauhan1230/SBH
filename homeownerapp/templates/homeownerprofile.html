@@ -1,0 +1,47 @@
+{% extends 'homebase.html' %}
+
+
+
+{% block title %}
+
+Profile
+
+
+{% endblock %}
+
+
+
+{% block main %}
+
+<div class="row mt-3">
+    <div class="col-sm-4 mx-auto text-center py-3 shadow text-light rounded-3 my-auto   pro-card" >
+
+
+        <div class="p-2">
+            <img src="{{homeowner.picture.url}}" alt="Homeowner" class="profile-img mb-3">
+            <h2 class="mb-3">{{homeowner.name}}</h2>
+            <div class="mb-3">Homeowner</div>
+            <div >
+                <p>Email : {{homeowner.email}}
+                    <br>
+                    Contact No : {{homeowner.contactno}}
+                    <br>
+                    Address : {{homeowner.address}}
+                    <br>
+
+                    Bio : {{homeowner.bio}}
+                </p>
+
+            </div>
+        
+            <div class="card-footer text-center mt-4">
+                <a href="{% url 'homeowneredit' %}" class="btn  fw-semibold" style="background-color: orangered;">Update Profile</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+{% endblock %}

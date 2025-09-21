@@ -1,0 +1,55 @@
+{% extends 'homebase.html' %}
+
+
+
+{% block title %}
+
+Change Password
+
+
+{% endblock %}
+
+
+
+{% block main %}
+
+<div class="row">
+    <div class="col-sm-12 text-dark ">
+        
+        <div class="row mt-4">
+            <div class="col-sm-4 mx-auto border shadow-lg p-3 rounded-3 text-center">
+                <i class="fa-solid fa-edit fa-3x  " ></i>
+                <h3 class="text-center  mt-2">Change Password</h3>
+                        
+                <div class="change-password-container ">
+
+                    <form class="text-start" method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="oldpwd" class="form-label ">Current Password</label>
+                            <input type="password" class="form-control" name="oldpwd" id="oldpwd"
+                                placeholder="Enter current password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newpwd" class="form-label">New Password</label>
+                            <input type="password" class="form-control" name="newpwd" id="newpwd"
+                                placeholder="Enter new password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmpwd" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmpwd" name="confirmpwd"
+                                placeholder="Confirm new password" required>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" style="background-color: orangered;" class=" btn text-light">Change Password</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

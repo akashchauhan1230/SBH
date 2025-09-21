@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{% block title %}
+Forget Password
+{% endblock %}
+
+{% block main %}
+<div class="row bgc">
+    <div class="col-sm-11 mx-auto shadow-lg  bg-light text-dark rounded-2 mt-5 mb-5">
+        <div class="row mt-5 mb-5">
+            <div class="col-sm-6 text-start mx-auto" data-aos="fade-right" data-aos-duration="1500">
+        <!--Alert box -->
+        {% if messages %}
+        {% for m in messages %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ m }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        {% endfor %}
+        {% endif %}
+                <h2 id="h1" class="text-center mb-5">&#9830;Forget Password&#9830;</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                
+                    <label for="email" class="form-label">Registered Email Address</label>
+                    <input type="email" name="email" class="form-control" placeholder="Enter your registered email" required>
+                    <label for="con" class="form-label">Contact</label>
+                    <input type="number" name="contactno" class="form-control" placeholder="Enter your number" required>
+                    <button type="submit" class="btn btn-primary mt-5">Send Reset Link</button>
+                </form>
+            </div>
+    
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

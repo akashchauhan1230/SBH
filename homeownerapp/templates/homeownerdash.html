@@ -1,0 +1,99 @@
+{% extends 'homebase.html' %}
+
+
+
+{% block title %}
+
+Homeowner Dashboard
+
+
+{% endblock %}
+
+
+
+{% block main %}
+
+<!-- Greeting -->
+<div class="row mt-4">
+        <div class="col-sm-12 mb-3">
+                <h5 id="greeting"></h5>
+        </div>
+</div>
+
+
+<!-- Stat Cards -->
+<div class="row mt-4 text-center">
+        <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card p-3">
+                        <i class="bi bi-bar-chart-fill text-primary fs-1 mb-1"></i>
+                        <h2>{{tp}}</h2>
+                        <p>Total Projects</p>
+                </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card p-3">
+                        <i class="bi bi-hourglass-split text-warning fs-1 mb-1"></i>
+                        <h2>{{op}}</h2>
+                        <p>Ongoing Projects</p>
+                </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card p-3">
+                         <i class="bi bi-exclamation-circle text-danger fs-1 mb-1"></i>
+                        <h2>{{pp}}</h2>
+                        <p>Pending Proejcts</p>
+                </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card p-3">
+                        <i class="bi bi-check2-circle text-success fs-1 mb-1"></i>
+                        <h2>{{cp}}</h2>
+                        <p>Complete Projects</p>
+                </div>
+        </div>
+        
+</div>
+
+<!-- Recent Updates Section -->
+<div class="row mt-4  ">
+        <div class="col-12">
+                <div class="card p-4 ">
+                        <h5 class="dashboard-title mb-3">Recent Updates</h5>
+                        <ul class="list-group">
+                                <li class="list-group-item">Project “Dream Villa” – Phase 2 started.</li>
+                                <li class="list-group-item">Payment of ₹50,000 received on July 30.</li>
+                                <li class="list-group-item">Site inspection scheduled for August 2.</li>
+                        </ul>
+                </div>
+        </div>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+        // Greet admin based on time
+        const greeting = document.getElementById("greeting");
+        const hour = new Date().getHours();
+        if (hour < 12) {
+                greeting.textContent = "Good Morning  🌤️, {{name}} !";
+        } else if (hour < 17) {
+                greeting.textContent = "Good Afternoon ☀️, {{name}} !";
+        } else {
+                greeting.textContent = "Good Evening 🌙, {{name}} !";
+        }
+
+        // Trigger confetti when page loads
+        setTimeout(() => {
+                confetti({
+                        particleCount: 200,
+                        spread: 100,
+                        origin: { y: 0.6 }
+                });
+        }, 400);
+</script>
+
+
+{% endblock %}

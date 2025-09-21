@@ -1,0 +1,28 @@
+{% extends 'homebase.html' %}
+
+
+
+{% block title %}
+
+Add Project
+
+
+{% endblock %}
+
+
+
+{% block main %}
+
+<div class="row mt-3">
+    <div class="col-sm-8 shadow mx-auto  bg-light text-dark border rounded-3 p-3">
+        <h3 class="mb-3">Add New Project</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <button class="btn   w-50     form-control" type="submit" style="background-color: orangered;">Add Project</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

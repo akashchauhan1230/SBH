@@ -1,0 +1,47 @@
+{% extends 'cbase.html' %}
+
+
+
+{% block title %}
+
+Profile
+
+
+{% endblock %}
+
+
+
+{% block main %}
+
+<div class="row mt-3">
+    <div class="col-sm-4 mx-auto text-center py-3 shadow text-light rounded-3 my-auto     pro-card" >
+
+
+        <div class="p-2">
+            <img src="{{contractor.picture.url}}"  class="profile-img mb-3">
+            <h2 class="mb-3">{{contractor.name}}</h2>
+            <div class="mb-3">Contractor</div>
+            <div >
+                <p>Email : {{contractor.email}}
+                    <br>
+                    Contact No : {{contractor.contactno}}
+                    <br>
+                    Address : {{contractor.address}}
+                    <br>
+
+                    Bio : {{contractor.bio}}
+                </p>
+
+            </div>
+          
+            <div class="card-footer text-center mt-4">
+                <a href="{% url 'coneditprofile' %}" class="btn  fw-semibold" style="background-color: orangered;">Update Profile</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+{% endblock %}

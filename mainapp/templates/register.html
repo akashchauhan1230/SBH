@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+Register Page
+{% endblock %}
+
+{% block main %}
+
+
+<div class="row bgc">
+    <div class="col-sm-9 mx-auto">
+         
+        <div class="row mt-5 mb-5">
+            <div class="col-sm text-light mt-3 d mx-auto shadow rounded-4 position-relative">
+            {% comment %} <h3 data-aos="fade-up" class="mt-2">Build Your Future</h3>
+            <p>Join our platform to access exclusive construction services and project management tools.</p> {% endcomment %}
+            <img src="{% static 'img/reg.jpg' %}" alt="" class="w-100 mt-3 rounded-4  ax" data-aos="flip-right"  data-aos-easing="ease-out-cubic" data-aos-duration="2000" height="590px">
+            
+                    <p class="text-center mt-3 position-absolute  text-light fw-semibold" data-aos="fade-right" data-aos-duration="1500" style="bottom: 55px; left:75px;">Already have an account? <a href="{% url 'signin' %}" style="color:#1d263a ;" class="text-decoration-none fw-bold">&#9830;Sign In&#9830;</a></p>
+            </div>
+            <div class="col-sm shadow-lg  d text-light py-2  mx-auto mt-3 rounded-4  " data-aos="fade-right" data-aos-duration="1500">
+               <!--Alert box -->
+        {% if messages %}
+        {% for m in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ m }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        {% endfor %}
+        {% endif %}
+        <!--Alert box end-->
+                <h3 >Create Account</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="select" class="form-label">User type</label>
+                        <select name="usertype" id="select" required class="form-control text-light" style="background-color: rgba(65, 54, 54, 0.4);" >
+                            <option selected disabled>-Select User Type-</option>
+                            <option value="homeowner">Home Owner</option>
+                            <option value="contractor">Contractor</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" required>
+                    </div>
+                        <div class="mb-3">
+                        <label for="contactno" class="form-label">Phone No</label>
+                        <input type="number" class="form-control" id="contactno" name="contactno" placeholder="XXXXXXXXXX" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="example@mail.com" required>
+                    </div>
+                    
+
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label" >Create Password</label>
+                        <input type="password" class="form-control" id="password" required name="password" placeholder="********" >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label" >Confirm Password</label>
+                        <input type="password" class="form-control" required id="confirmPassword" name="confirmpassword" placeholder="********">
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit"  class="ar">Create Account</button>
+                    </div>
+
+                </form>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+
+{% endblock %}

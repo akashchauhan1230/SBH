@@ -1,0 +1,56 @@
+{% extends 'cbase.html' %}
+
+
+
+{% block title %}
+
+Add Progress
+
+
+{% endblock %}
+
+
+{% block main %}
+<div class="row">
+    <div class="col-sm-12 mx-auto">
+
+        <h3 class="mb-3">Progress Update For <span class="text-warning"> {{project.projectname}}</span></h3>
+
+<form method="post" enctype="multipart/form-data" class="w-75 mx-auto mt-5 border p-3 bg-light rounded-3">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="ut" class="form-label">Update Text</label>
+        <textarea name="update_text" id="ut" class="form-control" required></textarea>
+    </div>
+
+<div class="mb-3">
+        <label for="d" class="form-label">Update Progress</label>
+        <input type="number" name="progress_percent" id="d" class="form-control" value="{{project.progress}}" onchange="check()" required><span id="z" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="f" class="form-label">Update File</label>
+        <input type="file" name="image" id="f" class="form-control" required>
+    </div>
+
+    <div class="mb-3 text-center ">
+        <button type="submit" class="btn w-50 text-light fw-semibold" style="background-color: orangered;">Submit</button>
+    </div>
+
+</form>
+    </div>
+</div>
+
+
+<script>
+    function check(){
+        var old='{{project.progress}}' ;
+        var progress=document.getElementById('d').value;
+        if (progress<old){
+            document.getElementById('z').innerHTML='Progress cannot be less than previous progress';
+            document.getElementById('d').value=old;
+        }
+    }
+</script>
+
+{% endblock %}

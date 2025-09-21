@@ -1,0 +1,151 @@
+body{
+    font-family: 'Segoe UI', sans-serif !important;
+    background-size: cover;
+}
+.navbar {
+
+    background: #0f2027;
+}
+
+.bgi{
+    background-image: url('../img/bg.jpg') !important;
+    background-size: cover;
+    opacity: o.01;
+}
+.nav-item a {
+    color: white;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.nav-item a:hover {
+    color:black;
+    border-radius: 20px;
+    background-color: #f16209;
+}
+
+.content{
+    
+    margin-top: 250px !important ;
+}
+
+.bgc {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+
+
+.ar{
+    background: #f16209;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    transition: ease 0.6s;
+}
+.ar:hover{
+    background: white;
+    color: black;
+    border: 2px solid  black;
+
+}
+
+.ab h1 {
+    color: #f16209;
+    font-weight: bold;
+}
+
+.ab p {
+    color: white;
+    ;
+}
+#policy{
+    text-decoration: none;
+    color: rgb(88, 86, 84);
+    display: flex;
+    float: right;
+
+
+}
+
+
+
+
+.fo {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+
+}
+
+.foot {
+    background: #0f2027;
+    text-decoration: none;
+}
+
+.foo a{
+    text-decoration: none;
+}
+.foo{
+    color: rgb(214, 211, 211);
+    line-height: 17px;
+}
+
+.foo:hover {
+    color: #f16209;
+    transform: translateX(5px);
+    transition: ease 0.3s;
+    text-decoration: underline;
+
+}
+
+.sec {
+    padding: 20px;
+    background-color: #f16209;
+}
+
+.sec:hover {
+    background-color: #f16209;
+    color: white;
+    transform: translateY(-5px);
+    transition: ease 0.3s;
+    border-radius: 10px;
+}
+
+
+
+h1,h2,h3,h4,h6{
+color: #f16209  !important;
+
+}
+h5{
+    color: orangered !important;
+    font-weight: bold !important;
+}
+input{
+background: white !important;
+}
+a:hover{
+    text-decoration: underline !important;
+}
+
+.ax:hover{
+    transform: translateY(-5px) !important;
+    border-bottom: 4px solid orangered !important ;
+    transition: ease 0.4s;
+}
+
+.fa-solid{
+    padding: 5px;
+    border: none;
+}
+.fa-solid:hover{
+    background-color: #db7b40;
+    border-radius: 10px;
+    transform: scale(1.19);
+    transition: ease 0.5s;
+}
+.col-sm-4 img{
+    opacity: 0.5 !important;
+} 

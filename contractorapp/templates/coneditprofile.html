@@ -1,0 +1,72 @@
+{% extends 'cbase.html' %}
+
+
+
+{% block title %}
+
+Edit Profile
+
+{% endblock %}
+
+
+{% block main %}
+
+
+
+
+
+
+<div class="row">
+    <div class="col-sm-7 mx-auto  text-light p-4  pro-card shadow rounded-3">
+    
+        <h3 class="text-center mb-4">Edit Profile</h3>
+
+        <form method="post" class="row g-3" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- Name -->
+            <div class="col-md-6">
+                <label for="n" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="n" value="{{ contractor.name }}">
+            </div>
+
+            <!-- Contact Number -->
+            <div class="col-md-6">
+                <label for="cn" class="form-label">Contact No</label>
+                <input type="text" class="form-control" name="contactno" id="cn" value="{{ contractor.contactno }}">
+            </div>
+
+            <!-- Email (disabled) -->
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" value="{{ contractor.email }}" disabled>
+            </div>
+
+            <!-- Profile Picture Upload -->
+            <div class="col-md-6">
+                <label for="pro" class="form-label">Choose Profile Picture</label>
+                <input type="file" class="form-control" name="profile" id="pro">
+            </div>
+
+            <!-- Address -->
+            <div class="col-md-6">
+                <label for="ad" class="form-label">Full Address</label>
+                <textarea class="form-control" name="address" id="ad" rows="3">{{ contractor.address }}</textarea>
+            </div>
+
+            <!-- Bio -->
+            <div class="col-md-6">
+                <label for="bio" class="form-label">Bio</label>
+                <textarea class="form-control" name="bio" id="bio" rows="3">{{ contractor.bio }}</textarea>
+            </div>
+
+            <!-- Submit Button (centered if possible) -->
+            <div class="col-12 text-center">
+                <button type="submit" class="btn w-50  fw-semibold" style="background-color: orangered;">Update</button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+{% endblock %}
